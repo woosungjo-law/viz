@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고난의 순간에는 말보다 먼저 무너지는 것이 있다 — 손잡이 문장 만들기</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A;}}
+:root[data-theme="dark"]{--paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A}
+:root[data-theme="light"]{--paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.5rem,2.4vw + 1rem,2.2rem);line-height:1.25;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);color:var(--muted);border-left:2px solid var(--rule-solid);padding-left:1rem;max-width:34em}
+form{display:flex;flex-direction:column;gap:1.5rem}
+.field{display:flex;flex-direction:column;gap:.5rem}
+label{font-weight:600;font-size:1.05rem}
+.hint{font-size:.88rem;color:var(--muted)}
+input[type="text"]{font:inherit;font-size:1.05rem;padding:.8rem .9rem;border:1px solid var(--rule-solid);border-radius:8px;background:var(--paper-2);color:var(--ink);width:100%}
+input[type="text"]:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font:inherit;font-size:.9rem;padding:.45rem .8rem;border:1px solid var(--rule-solid);border-radius:999px;background:var(--paper-2);color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--accent);background:var(--accent-tint)}
+.result{background:var(--accent-tint);border:1px solid var(--accent);border-radius:8px;padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:1rem}
+.sentence{font-family:var(--font-serif);font-size:clamp(1.2rem,1.6vw + .9rem,1.6rem);line-height:1.55;letter-spacing:-.01em;text-wrap:balance}
+.sentence .fill{color:var(--accent)}
+.row{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap}
+.copy{font:inherit;font-weight:600;padding:.6rem 1.1rem;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer}
+:root[data-theme="dark"] .copy{color:#1E1A14}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .copy{color:#1E1A14}}
+.toast{font-size:.88rem;color:var(--muted);min-height:1.4em}
+.note{font-size:.88rem;color:var(--muted)}
+.close{border-top:1px solid var(--rule-solid);padding-top:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.close p:first-child{font-family:var(--font-serif);font-size:1.15rem;line-height:1.55}
+footer{font-size:.75rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;border-top:1px solid var(--rule);padding-top:1rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">소진과 회복 · 오늘의 문장</p>
+    <h1>고난의 순간에는 말보다 먼저 무너지는 것이 있다</h1>
+    <p class="lead">오늘의 문장을 짧게 남겨 보자.</p>
+  </header>
+
+  <form id="f" onsubmit="return false">
+    <div class="field">
+      <label for="a">지금 힘든 것은</label>
+      <input id="a" type="text" autocomplete="off" placeholder="이것">
+      <p class="hint">현실을 과장하지도 축소하지도 않는 문장을 다시 세우는 일이다.</p>
+    </div>
+    <div class="field">
+      <label for="b">아직 할 수 있는 것은</label>
+      <input id="b" type="text" autocomplete="off" placeholder="이것">
+      <p class="hint">회복은 거대한 결심보다 감당 가능한 단위로 현실을 다시 나누는 데서 시작된다.</p>
+      <div class="chips" role="group" aria-label="예시">
+        <button type="button" class="chip" data-v="오늘 처리할 연락 하나">오늘 처리할 연락 하나</button>
+        <button type="button" class="chip" data-v="미뤄야 할 결정 하나">미뤄야 할 결정 하나</button>
+        <button type="button" class="chip" data-v="도움을 요청할 사람 하나">도움을 요청할 사람 하나</button>
+      </div>
+    </div>
+  </form>
+
+  <section class="result" aria-live="polite">
+    <p class="sentence" id="out">“지금 힘든 것은 <span class="fill">이것</span>이고, 아직 할 수 있는 것은 <span class="fill">이것</span>이다.”</p>
+    <div class="row">
+      <button type="button" class="copy" id="copy">문장 복사</button>
+      <span class="toast" id="toast"></span>
+    </div>
+    <p class="note">입력한 내용은 이 화면 안에서만 쓰이고, 저장되거나 전송되지 않습니다.</p>
+  </section>
+
+  <section class="close">
+    <p>이 문장은 희망의 구호가 아니라 현실의 손잡이다. 손잡이가 있으면 사람은 한 번에 멀리 가지 못해도 다음 한 걸음을 선택할 수 있다.</p>
+  </section>
+
+  <footer>
+    <span>원문: 고난의 순간에는 말보다 먼저 무너지는 것이 있다</span>
+    <span>조우성 변호사</span>
+  </footer>
+</main>
+<script>
+(function(){
+  var a=document.getElementById('a'),b=document.getElementById('b'),out=document.getElementById('out'),
+      toast=document.getElementById('toast'),copyBtn=document.getElementById('copy');
+  function hasBatchim(s){
+    s=s.replace(/[\s.,!?"'“”‘’)\]]+$/,'');
+    if(!s)return true;
+    var c=s.charCodeAt(s.length-1);
+    if(c>=0xAC00&&c<=0xD7A3)return (c-0xAC00)%28!==0;
+    return false;
+  }
+  function esc(s){return s.replace(/[&<>"]/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function parts(){
+    var x=a.value.trim()||'이것',y=b.value.trim()||'이것';
+    return {x:x,y:y,x2:hasBatchim(x)?'이고':'고',y2:hasBatchim(y)?'이다':'다'};
+  }
+  function render(){
+    var p=parts();
+    out.innerHTML='“지금 힘든 것은 <span class="fill">'+esc(p.x)+'</span>'+p.x2+', 아직 할 수 있는 것은 <span class="fill">'+esc(p.y)+'</span>'+p.y2+'.”';
+  }
+  a.addEventListener('input',render);b.addEventListener('input',render);
+  Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){
+    c.addEventListener('click',function(){b.value=c.getAttribute('data-v');render();b.focus();});
+  });
+  copyBtn.addEventListener('click',function(){
+    var p=parts(),t='지금 힘든 것은 '+p.x+p.x2+', 아직 할 수 있는 것은 '+p.y+p.y2+'.';
+    function done(m){toast.textContent=m;setTimeout(function(){toast.textContent='';},2200);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(function(){done('복사했습니다');},function(){done('복사하지 못했습니다');});
+    }else{
+      var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');done('복사했습니다');}catch(e){done('복사하지 못했습니다');}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+</body>
+</html>
