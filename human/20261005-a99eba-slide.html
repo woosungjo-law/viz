@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>불운의 전염성 — 일곱 컷 슬라이드</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--on-accent:#FFFFFF;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--on-accent:#1E1A14;}}
+:root[data-theme="dark"]{--paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--on-accent:#1E1A14}
+:root[data-theme="light"]{--paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--on-accent:#FFFFFF}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2rem 1rem 2.5rem}
+.wrap{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:1.25rem}
+.deck{container-type:inline-size;width:100%}
+.slide{--fs-small:max(12px,1.3cqw);--fs-body:max(15px,1.8cqw);--fs-quote:max(20px,3cqw);--fs-core:max(24px,4cqw);--fs-title:max(34px,6.2cqw);
+  position:relative;display:none;aspect-ratio:16/9;flex-direction:column;justify-content:center;gap:2.2cqw;padding:5cqw 7cqw;
+  background:var(--paper-2);border:1px solid var(--rule-solid);border-radius:10px}
+.slide.on{display:flex;animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.slide.on{animation:none}}
+.num{position:absolute;top:1.6cqw;right:2.4cqw;font-size:var(--fs-small);color:var(--soft);letter-spacing:.1em}
+.tag{font-size:var(--fs-small);letter-spacing:.16em;color:var(--accent);font-weight:600}
+.title{font-family:var(--font-serif);font-weight:500;font-size:var(--fs-title);line-height:1.15;letter-spacing:-.03em}
+.body{font-size:var(--fs-body);line-height:1.75;max-width:30em;text-wrap:balance}
+.serif{font-family:var(--font-serif)}
+.quote{font-family:var(--font-serif);font-size:var(--fs-quote);line-height:1.5;letter-spacing:-.01em;text-wrap:balance;border-left:.5cqw solid var(--accent);padding-left:2.2cqw}
+.cite{font-size:var(--fs-small);color:var(--muted);letter-spacing:.05em}
+.muted{color:var(--muted)}
+.core{font-family:var(--font-serif);font-size:var(--fs-core);line-height:1.4;letter-spacing:-.02em;color:var(--accent);text-wrap:balance}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:2.4cqw}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
+.box{border:1px solid var(--rule-solid);border-radius:8px;padding:2cqw;background:var(--paper);display:flex;flex-direction:column;gap:.8cqw}
+.box.hot{border-color:var(--accent);background:var(--accent-tint)}
+.box h3{font-family:var(--font-serif);font-weight:600;font-size:max(15px,1.9cqw);line-height:1.4}
+.box p{font-size:max(13px,1.55cqw);line-height:1.65;color:var(--muted)}
+.steps{display:flex;flex-direction:column;gap:1.4cqw}
+.step{display:flex;gap:1.8cqw;align-items:flex-start;font-size:var(--fs-body);line-height:1.6}
+.step b{flex-shrink:0;width:max(26px,3cqw);height:max(26px,3cqw);border-radius:50%;background:var(--accent);color:var(--on-accent);display:inline-flex;align-items:center;justify-content:center;font-size:max(13px,1.5cqw)}
+.ctl{display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap}
+.btn{font:inherit;font-size:.9rem;padding:.5rem 1.1rem;border:1px solid var(--rule-solid);border-radius:999px;background:var(--paper-2);color:var(--ink);cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--accent)}
+.btn:disabled{opacity:.4;cursor:default}
+.btn:focus-visible,.dot:focus-visible,.deck:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cnt{font-size:.9rem;color:var(--muted);min-width:4.5em;text-align:center}
+.dots{display:flex;gap:.45rem}
+.dot{width:12px;height:12px;border-radius:50%;border:1px solid var(--soft);background:transparent;cursor:pointer;padding:0}
+.dot[aria-current="true"]{background:var(--accent);border-color:var(--accent)}
+footer{font-size:.75rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;border-top:1px solid var(--rule);padding-top:1rem}
+@media (max-width:720px){
+  body{padding:1.5rem .9rem 2rem}
+  .slide{--fs-small:.8rem;--fs-body:1.02rem;--fs-quote:1.3rem;--fs-core:1.55rem;--fs-title:2.4rem;
+    display:flex;aspect-ratio:auto;padding:1.5rem 1.25rem;gap:1rem;margin-bottom:1rem}
+  .slide.on{animation:none}
+  .num{top:.7rem;right:1rem}
+  .cols,.cols3{grid-template-columns:1fr;gap:.8rem}
+  .box{padding:1rem}
+  .box h3{font-size:1rem}.box p{font-size:.92rem}
+  .quote{border-left-width:3px;padding-left:1rem}
+  .step{gap:.8rem}.step b{width:26px;height:26px;font-size:.8rem}
+  .ctl{display:none}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="deck" id="deck" tabindex="0" role="group" aria-roledescription="슬라이드" aria-label="불운의 전염성">
+
+    <section class="slide on" aria-label="1 / 7">
+      <span class="num">1 / 7</span>
+      <span class="tag">발타자르 그라시안</span>
+      <h1 class="title">불운의 전염성</h1>
+      <p class="body serif">어쩌면 우리는 돕는다는 명목 아래, 타인의 만성적인 패배주의가 내뿜는 독소를 무방비로 흡수하고 있던 것은 아닐까요?</p>
+    </section>
+
+    <section class="slide" aria-label="2 / 7">
+      <span class="num">2 / 7</span>
+      <p class="quote">“항상 우울하고 불평만 하는 사람을 멀리하라. 불운은 전염병보다 빠르게 퍼진다”</p>
+      <p class="cite">17세기 스페인의 사상가 발타자르 그라시안</p>
+      <p class="body muted">언뜻 들으면 약자를 배척하는 매정한 처세술처럼 보이기도 합니다.</p>
+    </section>
+
+    <section class="slide" aria-label="3 / 7">
+      <span class="num">3 / 7</span>
+      <p class="body serif">하지만 그라시안이 경계한 사람은</p>
+      <div class="cols">
+        <div class="box">
+          <span class="tag" style="color:var(--muted)">일시적</span>
+          <h3>일시적인 시련으로 넘어진 이가 아닙니다.</h3>
+        </div>
+        <div class="box hot">
+          <span class="tag">만성적</span>
+          <h3>매사를 부정의 렌즈로 바라보며 주변의 생명력을 빨아먹는 사람, 자신의 불행을 무기 삼아 타인의 발목을 잡는 만성적 패배주의자를 뜻합니다.</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="4 / 7">
+      <span class="num">4 / 7</span>
+      <div class="cols3">
+        <div class="box">
+          <h3>인간의 뇌 속 ‘거울 신경세포’</h3>
+          <p>타인의 감정과 언어를 무의식적으로 모방하도록 설계되어 있습니다.</p>
+        </div>
+        <div class="box">
+          <h3>하버드 연구진의 ‘사회적 전염 이론’</h3>
+          <p>행복뿐만 아니라 우울과 비관, 나아가 삶의 양식까지 네트워크를 통해 은밀히 전염된다는 사실을 밝혀냈습니다.</p>
+        </div>
+        <div class="box">
+          <h3>동양의 고전 속 “근주자적 근묵자흑”</h3>
+          <p>타인과 나누는 에너지의 파동에 의해 내 존재의 색깔이 어떻게 물들어가는지 간파한 존재론적 경고인 셈입니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="5 / 7">
+      <span class="num">5 / 7</span>
+      <p class="core">핵심은 운명의 기복이 아니라 반응의 습관입니다.</p>
+      <p class="body muted">감정의 쓰레기통을 자처하며 타인의 험담과 독소를 받아주는 일은 숭고한 구원이 아닙니다.</p>
+    </section>
+
+    <section class="slide" aria-label="6 / 7">
+      <span class="num">6 / 7</span>
+      <p class="body serif">내 삶을 지키기 위해서는 마땅히 영혼의 가지치기가 필요합니다.</p>
+      <div class="steps">
+        <div class="step"><b>1</b><span>험담이 습관이 된 이들과 거리를 두고</span></div>
+        <div class="step"><b>2</b><span>해결책 없는 감정의 소모전으로부터 단호히 물러서야 합니다.</span></div>
+        <div class="step"><b>3</b><span>긍정적이고 성장 지향적인 이들의 에너지 속으로 삶의 거점을 옮겨가야 합니다.</span></div>
+      </div>
+    </section>
+
+    <section class="slide" aria-label="7 / 7">
+      <span class="num">7 / 7</span>
+      <p class="core">타인을 거절하는 일에 죄책감을 느낄 필요는 없습니다.</p>
+      <p class="body">냉정해 보이는 경계선이야말로 나 자신의 환경과 존엄을 지키는 최후의 보루입니다.</p>
+      <p class="body serif muted">당신은 지금 어떤 에너지를 주고받으며 스스로를 물들이고 계신가요? 지금 거주하고 계신 삶의 공간이 영혼을 키우는 숲일지, 아니면 사유를 질식시키는 늪일지 돌아볼 때입니다.</p>
+    </section>
+  </div>
+
+  <nav class="ctl" aria-label="슬라이드 이동">
+    <button type="button" class="btn" id="prev">이전</button>
+    <span class="cnt" id="cnt" aria-live="polite">1 / 7</span>
+    <button type="button" class="btn" id="next">다음</button>
+    <div class="dots" id="dots"></div>
+  </nav>
+
+  <footer>
+    <span>원문: [발타자르 그라시안] 불운의 전염성</span>
+    <span>조우성 변호사</span>
+  </footer>
+</main>
+<script>
+(function(){
+  var slides=[].slice.call(document.querySelectorAll('.slide')),n=slides.length,i=0,
+      cnt=document.getElementById('cnt'),prev=document.getElementById('prev'),next=document.getElementById('next'),
+      dotsBox=document.getElementById('dots'),deck=document.getElementById('deck'),dots=[];
+  slides.forEach(function(_,k){
+    var d=document.createElement('button');d.type='button';d.className='dot';d.setAttribute('aria-label',(k+1)+'번째 슬라이드로 이동');
+    d.addEventListener('click',function(){go(k)});dotsBox.appendChild(d);dots.push(d);
+  });
+  function go(k){
+    i=Math.max(0,Math.min(n-1,k));
+    slides.forEach(function(s,j){s.classList.toggle('on',j===i)});
+    dots.forEach(function(d,j){d.setAttribute('aria-current',j===i?'true':'false')});
+    cnt.textContent=(i+1)+' / '+n;prev.disabled=i===0;next.disabled=i===n-1;
+  }
+  prev.addEventListener('click',function(){go(i-1)});
+  next.addEventListener('click',function(){go(i+1)});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){go(i+1)}
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){go(i-1)}
+    else if(e.key==='Home'){go(0)}else if(e.key==='End'){go(n-1)}
+  });
+  var x0=null;
+  deck.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  deck.addEventListener('touchend',function(e){
+    if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;x0=null;
+    if(Math.abs(dx)>50&&window.innerWidth>720){go(i+(dx<0?1:-1))}
+  },{passive:true});
+  go(0);
+})();
+</script>
+</body>
+</html>
