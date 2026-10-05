@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고난의 순간에는 말보다 먼저 무너지는 것이 있다 — 현실 나누기 플로차트</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239;
+  --line:#7A6A55;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#4A4237;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A;--line:#BFAE96;}}
+:root[data-theme="dark"]{--paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#4A4237;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A;--line:#BFAE96}
+:root[data-theme="light"]{--paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239;--line:#7A6A55}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:1.75rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.5rem,2.4vw + 1rem,2.2rem);line-height:1.25;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);color:var(--muted);max-width:34em;border-left:2px solid var(--rule-solid);padding-left:1rem}
+.diagram{overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+.d{min-width:880px}
+.m{display:none;max-width:420px;margin:0 auto}
+@media (max-width:760px){.d{display:none}.m{display:block}}
+.n{fill:var(--paper-2);stroke:var(--rule-solid);stroke-width:1.2}
+.n.hot{fill:var(--accent-tint);stroke:var(--accent)}
+.t{font-family:var(--font-sans);font-size:15px;font-weight:600;fill:var(--ink);text-anchor:middle}
+.s{font-family:var(--font-sans);font-size:13px;fill:var(--muted);text-anchor:middle}
+.k{font-family:var(--font-sans);font-size:13px;fill:var(--muted)}
+.call{font-family:var(--font-sans);font-size:13px;fill:var(--muted)}
+.e{fill:none;stroke:var(--line);stroke-width:1.3}
+.e.hot{stroke:var(--accent)}
+.dot{fill:var(--ink)}
+footer{font-size:.75rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;border-top:1px solid var(--rule);padding-top:1rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">소진과 회복 · 현실 나누기</p>
+    <h1>고난의 순간에는 말보다 먼저 무너지는 것이 있다</h1>
+    <p class="lead">먼저 무너지는 것은 의지보다 사건을 설명할 수 있는 언어다.</p>
+  </header>
+
+  <div class="diagram">
+    <svg class="d" viewBox="0 0 1000 840" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flow-title flow-desc">
+      <title id="flow-title">현실 나누기 플로차트</title>
+      <desc id="flow-desc">사업이 멈추거나 관계가 끊겼을 때 질문을 바꾸고, 현실을 연락·결정·도움으로 나누고, 도움의 종류를 구분해 지원 요청으로 바꾼 뒤 손잡이 문장을 남기는 흐름</desc>
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7A6A55"/></marker>
+        <marker id="arh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C4704A"/></marker>
+      </defs>
+
+      <!-- 시작 -->
+      <rect class="n" x="280" y="40" width="400" height="48" rx="24"/>
+      <text class="t" x="480" y="70">사업이 갑자기 멈추거나 중요한 관계가 끊겼다</text>
+      <path class="e" d="M480 88 V128" marker-end="url(#ar)"/>
+
+      <!-- 처음의 질문 -->
+      <rect class="n" x="300" y="128" width="360" height="56" rx="6"/>
+      <text class="t" x="480" y="154">“왜 하필 나에게 이런 일이 생겼나”</text>
+      <text class="s" x="480" y="173">그 질문을 억지로 없앨 필요는 없다</text>
+      <path class="e" d="M480 184 V232" marker-end="url(#ar)"/>
+
+      <!-- 붙이는 질문 -->
+      <rect class="n hot" x="160" y="232" width="640" height="72" rx="6"/>
+      <text class="t" x="480" y="262">다음 질문을 하나 붙여 보자</text>
+      <text class="s" x="480" y="286">“지금 내가 확인해야 할 사실은 무엇이고, 오늘 지킬 수 있는 것은 무엇인가”</text>
+
+      <!-- 분기 -->
+      <path class="e" d="M480 304 V364" marker-end="url(#ar)"/>
+      <path class="e" d="M480 336 H160 V364" marker-end="url(#ar)"/>
+      <path class="e" d="M480 336 H800 V364" marker-end="url(#ar)"/>
+      <text class="k" x="496" y="326">감당 가능한 단위로 현실을 다시 나누는 데서 시작된다</text>
+
+      <rect class="n" x="30" y="364" width="260" height="56" rx="6"/>
+      <text class="t" x="160" y="398">오늘 처리할 연락 하나</text>
+      <rect class="n" x="350" y="364" width="260" height="56" rx="6"/>
+      <text class="t" x="480" y="398">미뤄야 할 결정 하나</text>
+      <rect class="n" x="670" y="364" width="260" height="56" rx="6"/>
+      <text class="t" x="800" y="398">도움을 요청할 사람 하나</text>
+
+      <!-- 도움 구체화 -->
+      <path class="e" d="M800 420 V468" marker-end="url(#ar)"/>
+      <path class="e" d="M30 472 V508" style="stroke:var(--rule-solid)"/>
+      <text class="call" x="42" y="494">이렇게 현실을 나누는 일은 혼자 견디겠다는 선언이 아니다.</text>
+      <rect class="n" x="610" y="468" width="380" height="56" rx="6"/>
+      <text class="t" x="800" y="502" style="font-size:14px">어떤 도움을 요청해야 하는지 구체적으로 만든다</text>
+
+      <path class="e" d="M800 524 V572" marker-end="url(#ar)"/>
+      <path class="e" d="M800 548 H480 V572" marker-end="url(#ar)"/>
+      <path class="e" d="M800 548 H160 V572" marker-end="url(#ar)"/>
+
+      <rect class="n" x="20" y="572" width="280" height="48" rx="6"/>
+      <text class="t" x="160" y="602">돈이 필요한지</text>
+      <rect class="n" x="340" y="572" width="280" height="48" rx="6"/>
+      <text class="t" x="480" y="602">판단을 빌릴 사람이 필요한지</text>
+      <rect class="n" x="660" y="572" width="280" height="48" rx="6"/>
+      <text class="t" x="800" y="602">잠시 일을 맡길 사람이 필요한지</text>
+
+      <!-- 합류 -->
+      <path class="e" d="M160 620 V644 H800 V620"/>
+      <path class="e" d="M480 620 V644"/>
+      <circle class="dot" cx="480" cy="644" r="4"/>
+      <path class="e" d="M480 644 V668" marker-end="url(#ar)"/>
+
+      <rect class="n" x="260" y="668" width="440" height="52" rx="6"/>
+      <text class="t" x="480" y="700">“힘들다”는 말이 실제 지원의 요청으로 바뀐다</text>
+
+      <!-- 손잡이 -->
+      <path class="e hot" d="M480 720 V764" marker-end="url(#arh)"/>
+      <text class="k" x="496" y="748">오늘의 문장을 짧게 남겨 보자</text>
+      <rect class="n hot" x="160" y="764" width="640" height="52" rx="26"/>
+      <text class="t" x="480" y="796">지금 힘든 것은 이것이고, 아직 할 수 있는 것은 이것이다.</text>
+    </svg>
+
+    <!-- 좁은 화면용 세로형 (동일 노드·동일 원문) -->
+    <svg class="m" viewBox="0 0 360 1180" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flowm-title">
+      <title id="flowm-title">현실 나누기 플로차트(세로형)</title>
+      <defs>
+        <marker id="arm" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7A6A55"/></marker>
+        <marker id="armh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C4704A"/></marker>
+      </defs>
+
+      <rect class="n" x="20" y="16" width="320" height="64" rx="32"/>
+      <text class="t" x="180" y="44">사업이 갑자기 멈추거나</text>
+      <text class="t" x="180" y="64">중요한 관계가 끊겼다</text>
+      <path class="e" d="M180 80 V112" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="112" width="320" height="64" rx="6"/>
+      <text class="t" x="180" y="140">“왜 하필 나에게 이런 일이 생겼나”</text>
+      <text class="s" x="180" y="162">그 질문을 억지로 없앨 필요는 없다</text>
+      <path class="e" d="M180 176 V208" marker-end="url(#arm)"/>
+
+      <rect class="n hot" x="20" y="208" width="320" height="108" rx="6"/>
+      <text class="t" x="180" y="238">다음 질문을 하나 붙여 보자</text>
+      <text class="s" x="180" y="266">“지금 내가 확인해야 할 사실은</text>
+      <text class="s" x="180" y="286">무엇이고, 오늘 지킬 수 있는 것은</text>
+      <text class="s" x="180" y="306">무엇인가”</text>
+      <path class="e" d="M180 316 V332"/>
+      <text class="k" x="180" y="352" style="text-anchor:middle">감당 가능한 단위로 현실을</text>
+      <text class="k" x="180" y="372" style="text-anchor:middle">다시 나누는 데서 시작된다</text>
+      <path class="e" d="M180 380 V404" marker-end="url(#arm)"/>
+
+      <path class="e" d="M12 412 V588" style="stroke:var(--accent)"/>
+      <rect class="n" x="20" y="404" width="320" height="52" rx="6"/>
+      <text class="t" x="180" y="436">오늘 처리할 연락 하나</text>
+      <rect class="n" x="20" y="468" width="320" height="52" rx="6"/>
+      <text class="t" x="180" y="500">미뤄야 할 결정 하나</text>
+      <rect class="n" x="20" y="532" width="320" height="52" rx="6"/>
+      <text class="t" x="180" y="564">도움을 요청할 사람 하나</text>
+
+      <path class="e" d="M180 584 V604" style="stroke:var(--rule-solid)"/>
+      <text class="call" x="20" y="620">이렇게 현실을 나누는 일은 혼자</text>
+      <text class="call" x="20" y="640">견디겠다는 선언이 아니다.</text>
+      <path class="e" d="M180 652 V676" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="676" width="320" height="64" rx="6"/>
+      <text class="t" x="180" y="704">어떤 도움을 요청해야 하는지</text>
+      <text class="t" x="180" y="726">구체적으로 만든다</text>
+      <path class="e" d="M180 740 V768" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="768" width="320" height="48" rx="6"/>
+      <text class="t" x="180" y="798">돈이 필요한지</text>
+      <rect class="n" x="20" y="828" width="320" height="48" rx="6"/>
+      <text class="t" x="180" y="858">판단을 빌릴 사람이 필요한지</text>
+      <rect class="n" x="20" y="888" width="320" height="48" rx="6"/>
+      <text class="t" x="180" y="918">잠시 일을 맡길 사람이 필요한지</text>
+      <path class="e" d="M180 936 V972" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="972" width="320" height="64" rx="6"/>
+      <text class="t" x="180" y="1000">“힘들다”는 말이</text>
+      <text class="t" x="180" y="1022">실제 지원의 요청으로 바뀐다</text>
+      <text class="k" x="180" y="1060" style="text-anchor:middle">오늘의 문장을 짧게 남겨 보자</text>
+      <path class="e hot" d="M180 1036 V1048" />
+      <path class="e hot" d="M180 1068 V1096" marker-end="url(#armh)"/>
+
+      <rect class="n hot" x="20" y="1096" width="320" height="72" rx="36"/>
+      <text class="t" x="180" y="1126">지금 힘든 것은 이것이고,</text>
+      <text class="t" x="180" y="1148">아직 할 수 있는 것은 이것이다.</text>
+    </svg>
+  </div>
+
+  <footer>
+    <span>원문: 고난의 순간에는 말보다 먼저 무너지는 것이 있다</span>
+    <span>조우성 변호사</span>
+  </footer>
+</main>
+</body>
+</html>
