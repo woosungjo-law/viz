@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>불운의 전염성 — 전염에서 가지치기까지</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--line:#7A6A55;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#4A4237;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--line:#BFAE96;}}
+:root[data-theme="dark"]{--paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#4A4237;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--line:#BFAE96}
+:root[data-theme="light"]{--paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--line:#7A6A55}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:1.75rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.8rem,3vw + 1rem,2.7rem);line-height:1.25;letter-spacing:-.02em}
+.lead{font-family:var(--font-serif);color:var(--muted);max-width:34em;border-left:2px solid var(--rule-solid);padding-left:1rem}
+.diagram{overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+.d{min-width:880px}
+.m{display:none;max-width:420px;margin:0 auto}
+@media (max-width:760px){.d{display:none}.m{display:block}}
+.n{fill:var(--paper-2);stroke:var(--rule-solid);stroke-width:1.2}
+.n.hot{fill:var(--accent-tint);stroke:var(--accent)}
+.t{font-family:var(--font-sans);font-size:15px;font-weight:600;fill:var(--ink);text-anchor:middle}
+.t.hot{fill:var(--accent)}
+.s{font-family:var(--font-sans);font-size:13px;fill:var(--muted);text-anchor:middle}
+.k{font-family:var(--font-sans);font-size:13px;fill:var(--muted)}
+.c{text-anchor:middle}
+.e{fill:none;stroke:var(--line);stroke-width:1.3}
+.e.hot{stroke:var(--accent)}
+.br{fill:none;stroke:var(--rule-solid);stroke-width:2}
+footer{font-size:.75rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;border-top:1px solid var(--rule);padding-top:1rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">발타자르 그라시안</p>
+    <h1>불운의 전염성</h1>
+    <p class="lead">핵심은 운명의 기복이 아니라 반응의 습관입니다.</p>
+  </header>
+
+  <div class="diagram">
+    <svg class="d" viewBox="0 0 1000 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fl-title">
+      <title id="fl-title">전염에서 가지치기까지 흐름 도해</title>
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7A6A55"/></marker>
+        <marker id="arh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C4704A"/></marker>
+      </defs>
+
+      <!-- 근거 세 가지 -->
+      <rect class="n" x="20" y="24" width="290" height="96" rx="6"/>
+      <text class="t" x="165" y="52">인간의 뇌 속 ‘거울 신경세포’</text>
+      <text class="s" x="165" y="78">타인의 감정과 언어를 무의식적으로</text>
+      <text class="s" x="165" y="98">모방하도록 설계되어 있습니다</text>
+
+      <rect class="n" x="355" y="24" width="290" height="96" rx="6"/>
+      <text class="t" x="500" y="52" style="font-size:14px">하버드 연구진의 ‘사회적 전염 이론’</text>
+      <text class="s" x="500" y="78">우울과 비관, 나아가 삶의 양식까지</text>
+      <text class="s" x="500" y="98">네트워크를 통해 은밀히 전염된다</text>
+
+      <rect class="n" x="690" y="24" width="290" height="96" rx="6"/>
+      <text class="t" x="835" y="52">동양의 고전 속 “근주자적 근묵자흑”</text>
+      <text class="s" x="835" y="78">타인과 나누는 에너지의 파동에 의해</text>
+      <text class="s" x="835" y="98">내 존재의 색깔이 어떻게 물들어가는지</text>
+
+      <!-- 모임 -->
+      <path class="e" d="M165 120 V152 H500 V188" marker-end="url(#ar)"/>
+      <path class="e" d="M835 120 V152 H500"/>
+      <path class="e" d="M500 120 V188" marker-end="url(#ar)"/>
+      <text class="k" x="516" y="146">이 예리한 직관</text>
+
+      <rect class="n hot" x="250" y="188" width="500" height="60" rx="6"/>
+      <text class="s" x="500" y="212">발타자르 그라시안</text>
+      <text class="t hot" x="500" y="236">불운은 전염병보다 빠르게 퍼진다</text>
+      <path class="e" d="M500 248 V276" marker-end="url(#ar)"/>
+
+      <rect class="n" x="250" y="276" width="500" height="52" rx="6"/>
+      <text class="t" x="500" y="308">핵심은 운명의 기복이 아니라 반응의 습관입니다</text>
+
+      <!-- 가지치기 -->
+      <path class="e hot" d="M500 328 V348 H165 V372" marker-end="url(#arh)"/>
+      <text class="k" x="516" y="342">영혼의 가지치기</text>
+
+      <rect class="n" x="20" y="372" width="290" height="88" rx="6"/>
+      <text class="t" x="165" y="410">험담이 습관이 된 이들과</text>
+      <text class="t" x="165" y="432">거리를 두고</text>
+      <path class="e" d="M310 416 H355" marker-end="url(#ar)"/>
+
+      <rect class="n" x="355" y="372" width="290" height="88" rx="6"/>
+      <text class="t" x="500" y="400" style="font-size:14px">해결책 없는 감정의 소모전으로부터</text>
+      <text class="t" x="500" y="424">단호히 물러서야 합니다</text>
+      <path class="e" d="M645 416 H690" marker-end="url(#ar)"/>
+
+      <rect class="n hot" x="690" y="372" width="290" height="88" rx="6"/>
+      <text class="t hot" x="835" y="398" style="font-size:14px">긍정적이고 성장 지향적인 이들의</text>
+      <text class="t hot" x="835" y="420" style="font-size:14px">에너지 속으로 삶의 거점을</text>
+      <text class="t hot" x="835" y="442" style="font-size:14px">옮겨가야 합니다</text>
+
+      <!-- 맺음 -->
+      <path class="br" d="M30 496 V616"/>
+      <text class="k" x="42" y="516">타인을 거절하는 일에 죄책감을 느낄 필요는 없습니다.</text>
+      <text class="k" x="42" y="540">냉정해 보이는 경계선이야말로 나 자신의 환경과 존엄을 지키는 최후의 보루입니다.</text>
+      <text class="k" x="42" y="576">지금 거주하고 계신 삶의 공간이 영혼을 키우는 숲일지,</text>
+      <text class="k" x="42" y="600">아니면 사유를 질식시키는 늪일지 돌아볼 때입니다.</text>
+    </svg>
+
+    <!-- 좁은 화면용 세로형 (동일 노드·동일 원문) -->
+    <svg class="m" viewBox="0 0 360 1030" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flm-title">
+      <title id="flm-title">전염에서 가지치기까지 흐름 도해(세로형)</title>
+      <defs>
+        <marker id="arm" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#7A6A55"/></marker>
+        <marker id="armh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#C4704A"/></marker>
+      </defs>
+
+      <rect class="n" x="20" y="16" width="320" height="80" rx="6"/>
+      <text class="t" x="180" y="42" style="font-size:14px">인간의 뇌 속 ‘거울 신경세포’</text>
+      <text class="s" x="180" y="64">타인의 감정과 언어를 무의식적으로</text>
+      <text class="s" x="180" y="82">모방하도록 설계되어 있습니다</text>
+
+      <rect class="n" x="20" y="106" width="320" height="80" rx="6"/>
+      <text class="t" x="180" y="132" style="font-size:14px">하버드 연구진의 ‘사회적 전염 이론’</text>
+      <text class="s" x="180" y="154">우울과 비관, 나아가 삶의 양식까지</text>
+      <text class="s" x="180" y="172">네트워크를 통해 은밀히 전염된다</text>
+
+      <rect class="n" x="20" y="196" width="320" height="80" rx="6"/>
+      <text class="t" x="180" y="222" style="font-size:14px">동양의 고전 속 “근주자적 근묵자흑”</text>
+      <text class="s" x="180" y="244">타인과 나누는 에너지의 파동에 의해</text>
+      <text class="s" x="180" y="262">내 존재의 색깔이 어떻게 물들어가는지</text>
+
+      <path class="e" d="M180 276 V288"/>
+      <text class="k c" x="180" y="306">이 예리한 직관</text>
+      <path class="e" d="M180 314 V338" marker-end="url(#arm)"/>
+
+      <rect class="n hot" x="20" y="338" width="320" height="72" rx="6"/>
+      <text class="s" x="180" y="362">발타자르 그라시안</text>
+      <text class="t hot" x="180" y="388">불운은 전염병보다 빠르게 퍼진다</text>
+      <path class="e" d="M180 410 V434" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="434" width="320" height="68" rx="6"/>
+      <text class="t" x="180" y="462">핵심은 운명의 기복이 아니라</text>
+      <text class="t" x="180" y="484">반응의 습관입니다</text>
+      <path class="e hot" d="M180 502 V516"/>
+      <text class="k c" x="180" y="534">영혼의 가지치기</text>
+      <path class="e hot" d="M180 542 V566" marker-end="url(#armh)"/>
+
+      <rect class="n" x="20" y="566" width="320" height="64" rx="6"/>
+      <text class="t" x="180" y="594">험담이 습관이 된 이들과</text>
+      <text class="t" x="180" y="614">거리를 두고</text>
+      <path class="e" d="M180 630 V654" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="654" width="320" height="64" rx="6"/>
+      <text class="t" x="180" y="682" style="font-size:14px">해결책 없는 감정의 소모전으로부터</text>
+      <text class="t" x="180" y="702">단호히 물러서야 합니다</text>
+      <path class="e" d="M180 718 V742" marker-end="url(#arm)"/>
+
+      <rect class="n hot" x="20" y="742" width="320" height="88" rx="6"/>
+      <text class="t hot" x="180" y="770" style="font-size:14px">긍정적이고 성장 지향적인 이들의</text>
+      <text class="t hot" x="180" y="792" style="font-size:14px">에너지 속으로 삶의 거점을</text>
+      <text class="t hot" x="180" y="814" style="font-size:14px">옮겨가야 합니다</text>
+
+      <path class="br" d="M12 856 V1014"/>
+      <text class="k" x="24" y="876">타인을 거절하는 일에 죄책감을</text>
+      <text class="k" x="24" y="896">느낄 필요는 없습니다.</text>
+      <text class="k" x="24" y="922">냉정해 보이는 경계선이야말로 나 자신의</text>
+      <text class="k" x="24" y="942">환경과 존엄을 지키는 최후의 보루입니다.</text>
+      <text class="k" x="24" y="968">지금 거주하고 계신 삶의 공간이</text>
+      <text class="k" x="24" y="988">영혼을 키우는 숲일지, 아니면</text>
+      <text class="k" x="24" y="1008">사유를 질식시키는 늪일지 돌아볼 때입니다.</text>
+    </svg>
+  </div>
+
+  <footer>
+    <span>원문: [발타자르 그라시안] 불운의 전염성</span>
+    <span>조우성 변호사</span>
+  </footer>
+</main>
+</body>
+</html>
