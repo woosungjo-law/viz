@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회사 도장이 찍힌 내 계약서 — 법원의 판단 순서 플로차트</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08);--line:#6B7280;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14);--line:#9AA6B8;}}
+:root[data-theme="dark"]{--paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14);--line:#9AA6B8}
+:root[data-theme="light"]{--paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08);--line:#6B7280}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:1000px;margin:0 auto;display:flex;flex-direction:column;gap:1.75rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.4rem,2.2vw + 1rem,2.1rem);line-height:1.35;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);color:var(--muted);max-width:34em;border-left:2px solid var(--rule-solid);padding-left:1rem}
+.diagram{overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+.d{min-width:880px}
+.m{display:none;max-width:420px;margin:0 auto}
+@media (max-width:760px){.d{display:none}.m{display:block}}
+.n{fill:var(--paper-2);stroke:var(--rule-solid);stroke-width:1.2}
+.n.hot{fill:var(--accent-tint);stroke:var(--accent)}
+.t{font-family:var(--font-sans);font-size:14px;font-weight:600;fill:var(--ink);text-anchor:middle}
+.t.hot{fill:var(--accent)}
+.s{font-family:var(--font-sans);font-size:13px;fill:var(--muted);text-anchor:middle}
+.k{font-family:var(--font-sans);font-size:13px;fill:var(--muted)}
+.e{fill:none;stroke:var(--line);stroke-width:1.3}
+.e.hot{stroke:var(--accent)}
+.br{fill:none;stroke:var(--rule-solid);stroke-width:2}
+footer{font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:.35rem;border-top:1px solid var(--rule);padding-top:1rem}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;color:var(--soft);font-size:.75rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">계약 · 회사 도장의 힘</p>
+    <h1>회사 도장이 찍힌 내 계약서, ‘담당자가 멋대로 찍었다’⁠는 말로 무효가 되지 않는다</h1>
+    <p class="lead">결론부터 말씀드리면, 회사의 말 한마디로 계약서가 무효가 되지는 않습니다.</p>
+  </header>
+
+  <div class="diagram">
+    <svg class="d" viewBox="0 0 1000 740" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fl-title">
+      <title id="fl-title">법원의 판단 순서와 예외 분기 플로차트</title>
+      <defs>
+        <marker id="ar" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6B7280"/></marker>
+        <marker id="arh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1A3A6B"/></marker>
+      </defs>
+
+      <!-- 왼쪽 줄기: 법원의 판단 순서 -->
+      <text class="k" x="40" y="16" style="font-weight:600">법원의 판단 순서는 이렇습니다.</text>
+      <rect class="n" x="40" y="24" width="520" height="48" rx="24"/>
+      <text class="t" x="300" y="53">회사 도장이 찍힌 용역계약서</text>
+      <path class="e" d="M300 72 V104" marker-end="url(#ar)"/>
+
+      <rect class="n" x="40" y="104" width="520" height="72" rx="6"/>
+      <text class="t" x="300" y="132">계약서에 찍힌 도장 자국이 그 회사의 도장으로 찍힌 것인지 봅니다</text>
+      <text class="s" x="300" y="157">꼭 등기소에 신고한 인감만이 아니라, 그 회사가 실제로 쓰는 도장을 뜻합니다</text>
+      <path class="e" d="M300 176 V208" marker-end="url(#ar)"/>
+
+      <rect class="n" x="40" y="208" width="520" height="52" rx="6"/>
+      <text class="t" x="300" y="239">날인이 회사의 뜻에 따른 것으로 추정되고</text>
+      <path class="e" d="M300 260 V292" marker-end="url(#ar)"/>
+
+      <rect class="n" x="40" y="292" width="520" height="52" rx="6"/>
+      <text class="t" x="300" y="323">계약서 전체도 진짜로 추정되지요</text>
+      <path class="e" d="M300 344 V376" marker-end="url(#arh)" style="stroke:#1A3A6B"/>
+
+      <rect class="n hot" x="40" y="376" width="520" height="72" rx="6"/>
+      <text class="t hot" x="300" y="406">특별한 반대 증거가 없는 한</text>
+      <text class="t hot" x="300" y="430">계약서에 적힌 내용대로 약속이 있었다고 봅니다</text>
+
+      <path class="br" d="M30 480 V532"/>
+      <text class="k" x="42" y="498">법률가들은 이것을 ‘문서의 진정성립’이라고 부릅니다.</text>
+      <text class="k" x="42" y="522">그 문서가 이름이 적힌 사람, 여기서는 회사의 뜻대로 만들어졌다는 것이지요.</text>
+
+      <path class="br" d="M30 592 V704"/>
+      <text class="k" x="42" y="612">그 과장이 평소 외주 계약을 담당해 왔는지,</text>
+      <text class="k" x="42" y="632">회사 메일로 연락했는지 같은 계약 당시의 사정이</text>
+      <text class="k" x="42" y="652">그래서 중요합니다.</text>
+      <text class="k" x="42" y="684">법원은 계약을 맺던 그때 무엇을 보고 믿었는지를 기준으로 판단하니까요.</text>
+
+      <!-- 오른쪽 줄기: 추정을 뒤집으려면 -->
+      <path class="e" d="M560 318 H590" marker-end="url(#ar)"/>
+      <rect class="n" x="590" y="268" width="390" height="108" rx="6"/>
+      <text class="s" x="785" y="292">회사가 이 추정을 뒤집으려면</text>
+      <text class="t" x="785" y="318">법원이 의심을 품을 만한 구체적인 사정을</text>
+      <text class="t" x="785" y="340">증거로 보여 주어야 합니다</text>
+      <text class="s" x="785" y="364">“몰래 찍었다”⁠고 주장하는 것으로는 부족합니다</text>
+      <path class="e" d="M785 376 V408" marker-end="url(#ar)"/>
+
+      <rect class="n" x="590" y="408" width="390" height="72" rx="6"/>
+      <text class="t" x="785" y="438">회사가 ‘대표가 아니라 과장이 찍었다’⁠는</text>
+      <text class="t" x="785" y="460">사실을 밝혀내면 상황이 달라집니다</text>
+      <path class="e" d="M785 480 V512" marker-end="url(#ar)"/>
+
+      <rect class="n" x="590" y="512" width="390" height="72" rx="6"/>
+      <text class="t" x="785" y="542">그 과장에게 계약을 맺을 권한이 있었다는</text>
+      <text class="t" x="785" y="564">점을 증명해야 하지요</text>
+      <path class="e hot" d="M785 584 V616" marker-end="url(#arh)"/>
+
+      <rect class="n hot" x="590" y="616" width="390" height="96" rx="6"/>
+      <text class="s" x="785" y="642">권한을 넘은 표현대리</text>
+      <text class="t hot" x="785" y="668">상대방이 그 권한이 있다고 믿을 만한</text>
+      <text class="t hot" x="785" y="690">정당한 이유가 있었다면 회사가 책임지도록 합니다</text>
+    </svg>
+
+    <!-- 좁은 화면용 세로형 (동일 노드·동일 원문) -->
+    <svg class="m" viewBox="0 0 360 1170" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="flm-title">
+      <title id="flm-title">법원의 판단 순서와 예외 분기 플로차트(세로형)</title>
+      <defs>
+        <marker id="arm" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#6B7280"/></marker>
+        <marker id="armh" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#1A3A6B"/></marker>
+      </defs>
+
+      <text class="k" x="20" y="16" style="font-weight:600">법원의 판단 순서는 이렇습니다.</text>
+      <rect class="n" x="20" y="22" width="320" height="48" rx="24"/>
+      <text class="t" x="180" y="52">회사 도장이 찍힌 용역계약서</text>
+      <path class="e" d="M180 70 V94" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="94" width="320" height="108" rx="6"/>
+      <text class="t" x="180" y="120">계약서에 찍힌 도장 자국이 그 회사의</text>
+      <text class="t" x="180" y="140">도장으로 찍힌 것인지 봅니다</text>
+      <text class="s" x="180" y="168">꼭 등기소에 신고한 인감만이 아니라,</text>
+      <text class="s" x="180" y="188">그 회사가 실제로 쓰는 도장을 뜻합니다</text>
+      <path class="e" d="M180 202 V226" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="226" width="320" height="48" rx="6"/>
+      <text class="t" x="180" y="256">날인이 회사의 뜻에 따른 것으로 추정되고</text>
+      <path class="e" d="M180 274 V298" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="298" width="320" height="48" rx="6"/>
+      <text class="t" x="180" y="328">계약서 전체도 진짜로 추정되지요</text>
+      <path class="e hot" d="M180 346 V370" marker-end="url(#armh)"/>
+
+      <rect class="n hot" x="20" y="370" width="320" height="88" rx="6"/>
+      <text class="t hot" x="180" y="398">특별한 반대 증거가 없는 한</text>
+      <text class="t hot" x="180" y="420">계약서에 적힌 내용대로</text>
+      <text class="t hot" x="180" y="440">약속이 있었다고 봅니다</text>
+      <path class="e" d="M180 458 V482" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="482" width="320" height="112" rx="6"/>
+      <text class="s" x="180" y="506">회사가 이 추정을 뒤집으려면</text>
+      <text class="t" x="180" y="532">법원이 의심을 품을 만한 구체적인 사정을</text>
+      <text class="t" x="180" y="552">증거로 보여 주어야 합니다</text>
+      <text class="s" x="180" y="580">“몰래 찍었다”⁠고 주장하는 것으로는 부족합니다</text>
+      <path class="e" d="M180 594 V618" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="618" width="320" height="76" rx="6"/>
+      <text class="t" x="180" y="646">회사가 ‘대표가 아니라 과장이 찍었다’⁠는</text>
+      <text class="t" x="180" y="668">사실을 밝혀내면 상황이 달라집니다</text>
+      <path class="e" d="M180 694 V718" marker-end="url(#arm)"/>
+
+      <rect class="n" x="20" y="718" width="320" height="76" rx="6"/>
+      <text class="t" x="180" y="746">그 과장에게 계약을 맺을 권한이 있었다는</text>
+      <text class="t" x="180" y="768">점을 증명해야 하지요</text>
+      <path class="e hot" d="M180 794 V818" marker-end="url(#armh)"/>
+
+      <rect class="n hot" x="20" y="818" width="320" height="124" rx="6"/>
+      <text class="s" x="180" y="842">권한을 넘은 표현대리</text>
+      <text class="t hot" x="180" y="868">상대방이 그 권한이 있다고 믿을 만한</text>
+      <text class="t hot" x="180" y="890">정당한 이유가 있었다면</text>
+      <text class="t hot" x="180" y="912">회사가 책임지도록 합니다</text>
+
+      <path class="br" d="M12 966 V1030"/>
+      <text class="k" x="24" y="984">법률가들은 이것을 ‘문서의 진정성립’이라고 부릅니다.</text>
+      <text class="k" x="24" y="1006">그 문서가 이름이 적힌 사람,</text>
+      <text class="k" x="24" y="1026">여기서는 회사의 뜻대로 만들어졌다는 것이지요.</text>
+
+      <path class="br" d="M12 1060 V1156"/>
+      <text class="k" x="24" y="1078">그 과장이 평소 외주 계약을 담당해 왔는지,</text>
+      <text class="k" x="24" y="1098">회사 메일로 연락했는지 같은 계약 당시의 사정이</text>
+      <text class="k" x="24" y="1118">그래서 중요합니다.</text>
+      <text class="k" x="24" y="1140">법원은 계약을 맺던 그때 무엇을 보고 믿었는지를</text>
+      <text class="k" x="24" y="1160">기준으로 판단하니까요.</text>
+    </svg>
+  </div>
+
+  <footer>
+    <span>금액과 자료를 정리한 뒤 전문가 상담을 받아 보십시오.</span>
+    <div class="row"><span>원문: 회사 도장이 찍힌 내 계약서, ‘담당자가 멋대로 찍었다’⁠는 말로 무효가 되지 않는다</span><span>조우성 변호사</span></div>
+  </footer>
+</main>
+</body>
+</html>
