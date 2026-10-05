@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>세금 체납이 있으면 양수인이 전부 갚아야 할까? — 두 극단 비교 카드</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08);
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14);}}
+:root[data-theme="dark"]{--paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14)}
+:root[data-theme="light"]{--paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08)}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.5rem,2.6vw + 1rem,2.3rem);line-height:1.3;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);font-size:1.05rem;color:var(--muted);max-width:34em;border-left:2px solid var(--rule-solid);padding-left:1rem}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.panel{background:var(--paper-2);border:1px solid var(--rule-solid);border-radius:8px;padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.9rem}
+.tag{font-size:.75rem;letter-spacing:.12em;color:var(--muted)}
+.q{font-family:var(--font-serif);font-size:1.25rem;line-height:1.5;letter-spacing:-.01em;text-wrap:balance}
+.note{font-size:.9rem;color:var(--muted);line-height:1.65}
+.core{background:var(--accent-tint);border:1px solid var(--accent);border-radius:8px;padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:1rem}
+.core .tag{color:var(--accent)}
+.core .q{font-size:1.2rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem}
+.chip{font-size:.9rem;font-weight:600;padding:.4rem .8rem;border:1px solid var(--accent);border-radius:999px;color:var(--accent);background:var(--paper)}
+footer{font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:.35rem;border-top:1px solid var(--rule);padding-top:1rem}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;color:var(--soft);font-size:.75rem}
+@media (max-width:640px){.pair{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">사업양수도 · 양수인 책임</p>
+    <h1>세금 체납이 있으면 양수인이 전부 갚아야 할까?</h1>
+    <p class="lead">납세증명서 한 장으로 모든 위험이 닫히지 않는다.</p>
+  </header>
+
+  <section class="pair" aria-label="두 극단">
+    <div class="panel">
+      <span class="tag">양도인의 주장</span>
+      <p class="q">“계약서에 세금 부담을 맡았으니 양수인은 무관하다”</p>
+      <p class="note">당사자 간 부담 약정은 나중에 구상(되찾는 권리)의 근거일 뿐 과세관청을 상대로 한 방패가 되지 않는다.</p>
+    </div>
+    <div class="panel">
+      <span class="tag">반대 극단</span>
+      <p class="q">“체납이 있으면 모든 세금을 부담한다”</p>
+      <p class="note">양도 전 확정 여부·사업 관련성·법정 요건·재산가액 한도를 세목별 책임표로 확인한다.</p>
+    </div>
+  </section>
+
+  <section class="core" aria-label="핵심요약">
+    <span class="tag">핵심요약</span>
+    <p class="q">양수인이 과거 세금을 자동으로 전부 부담하는 것도 아니고, 계약서 한 줄로 법정 책임이 사라지는 것도 아니다.</p>
+    <div class="chips" role="list" aria-label="따로 확인할 것">
+      <span class="chip" role="listitem">확정 시점</span>
+      <span class="chip" role="listitem">사업 관련성</span>
+      <span class="chip" role="listitem">포괄승계 해당 여부</span>
+      <span class="chip" role="listitem">특수관계나 조세회피 목적</span>
+      <span class="chip" role="listitem">재산가액 한도</span>
+    </div>
+  </section>
+
+  <footer>
+    <span>법률 근거: 국세기본법 제41조(2026-08-11 시행)·시행령 제22조(2026-07-01 시행), 지방세기본법 제48조(2026-02-05 시행)</span>
+    <span>일반적 법률정보이며 개별 사안은 별도 검토가 필요합니다.</span>
+    <div class="row"><span>원문: 세금 체납이 있으면 양수인이 전부 갚아야 할까?</span><span>조우성 변호사</span></div>
+  </footer>
+</main>
+</body>
+</html>
