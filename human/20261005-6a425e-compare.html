@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고난의 순간에는 말보다 먼저 무너지는 것이 있다 — 질문 전환 카드</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A;}}
+:root[data-theme="dark"]{--paper:#1E1A14;--paper-2:#27221A;--ink:#F1E9DC;--muted:#BFAE96;--soft:#9B8B76;
+  --rule:rgba(241,233,220,.14);--rule-solid:#3A332A;--accent:#E08A62;--accent-tint:rgba(224,138,98,.14);--link:#D9B48A}
+:root[data-theme="light"]{--paper:#FAF8F4;--paper-2:#FFF9F5;--ink:#2C2416;--muted:#7A6A55;--soft:#9B8B76;
+  --rule:rgba(44,36,22,.12);--rule-solid:#E8E2D8;--accent:#C4704A;--accent-tint:rgba(196,112,74,.10);--link:#8C6239}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:2rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.55rem,2.6vw + 1rem,2.35rem);line-height:1.25;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);font-size:1.05rem;color:var(--muted);max-width:34em;text-wrap:balance;border-left:2px solid var(--rule-solid);padding-left:1rem}
+.pair{display:grid;grid-template-columns:1fr 3rem 1fr;align-items:stretch;gap:0}
+.panel{background:var(--paper-2);border:1px solid var(--rule-solid);border-radius:8px;padding:1.5rem 1.4rem;display:flex;flex-direction:column;gap:.9rem}
+.panel.after{border-color:var(--accent);background:var(--accent-tint)}
+.tag{font-size:.75rem;letter-spacing:.12em;color:var(--muted)}
+.after .tag{color:var(--accent)}
+.q{font-family:var(--font-serif);font-size:1.3rem;line-height:1.5;letter-spacing:-.01em;text-wrap:balance}
+.note{font-size:.9rem;color:var(--muted);line-height:1.65}
+.arrow{display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.arrow svg{width:28px;height:28px}
+.three{display:flex;flex-direction:column;gap:.9rem}
+.three-title{font-family:var(--font-serif);font-size:1.05rem;color:var(--muted);max-width:34em;text-wrap:balance}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem}
+.pick{border:1px solid var(--rule-solid);border-radius:8px;padding:1rem 1rem;font-weight:600;font-size:1rem;line-height:1.5;background:var(--paper-2)}
+.close{border-top:1px solid var(--rule-solid);padding-top:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.handle{font-family:var(--font-serif);font-size:clamp(1.2rem,1.6vw + .9rem,1.65rem);line-height:1.5;letter-spacing:-.01em;text-wrap:balance}
+.handle em{font-style:normal;color:var(--accent)}
+footer{font-size:.75rem;color:var(--soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;border-top:1px solid var(--rule);padding-top:1rem}
+@media (max-width:640px){
+  .pair{grid-template-columns:1fr;gap:0}
+  .arrow{padding:.5rem 0;transform:rotate(90deg)}
+  .picks{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">소진과 회복 · 질문 전환</p>
+    <h1>고난의 순간에는 말보다 먼저 무너지는 것이 있다</h1>
+    <p class="lead src">먼저 무너지는 것은 의지보다 사건을 설명할 수 있는 언어다.</p>
+  </header>
+
+  <section class="pair" aria-label="질문의 전환">
+    <div class="panel">
+      <span class="tag">처음의 질문</span>
+      <p class="q src">“왜 하필 나에게 이런 일이 생겼나”</p>
+      <p class="note src">그 질문을 억지로 없앨 필요는 없다. 다만 그 질문만 반복하면 사건은 설명되지 않은 운명으로 커진다.</p>
+    </div>
+    <div class="arrow" aria-hidden="true">
+      <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h20M16 6l8 8-8 8"/></svg>
+    </div>
+    <div class="panel after">
+      <span class="tag">붙여 보는 질문</span>
+      <p class="q src">“지금 내가 확인해야 할 사실은 무엇이고, 오늘 지킬 수 있는 것은 무엇인가.”</p>
+      <p class="note src">오늘 처리할 연락 하나, 미뤄야 할 결정 하나, 도움을 요청할 사람 하나를 구분하게 한다.</p>
+    </div>
+  </section>
+
+  <section class="three" aria-label="현실을 나눈다">
+    <p class="three-title src">회복은 거대한 결심보다 감당 가능한 단위로 현실을 다시 나누는 데서 시작된다.</p>
+    <div class="picks">
+      <div class="pick src">오늘 처리할 연락 하나</div>
+      <div class="pick src">미뤄야 할 결정 하나</div>
+      <div class="pick src">도움을 요청할 사람 하나</div>
+    </div>
+  </section>
+
+  <section class="close" aria-label="손잡이 문장">
+    <p class="handle src">“지금 힘든 것은 이것이고, 아직 할 수 있는 것은 이것이다.”</p>
+    <p class="note src">이 문장은 희망의 구호가 아니라 현실의 손잡이다.</p>
+  </section>
+
+  <footer>
+    <span>원문: 고난의 순간에는 말보다 먼저 무너지는 것이 있다</span>
+    <span>조우성 변호사</span>
+  </footer>
+</main>
+</body>
+</html>
