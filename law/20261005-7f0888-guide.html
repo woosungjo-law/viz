@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>회사 도장이 찍힌 내 계약서 — 증명 책임이 넘어오는 지점</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08);--on-accent:#FFFFFF;
+  --font-serif:'Noto Serif KR','Batang','바탕',Georgia,serif;
+  --font-sans:'Pretendard','Malgun Gothic','맑은 고딕',-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14);--on-accent:#0F141C;}}
+:root[data-theme="dark"]{--paper:#0F141C;--paper-2:#161D29;--ink:#E7ECF4;--muted:#9AA6B8;--soft:#7C8799;
+  --rule:rgba(231,236,244,.14);--rule-solid:#2A3446;--accent:#8FB1EE;--accent-tint:rgba(143,177,238,.14);--on-accent:#0F141C}
+:root[data-theme="light"]{--paper:#FFFFFF;--paper-2:#F8FAFC;--ink:#111827;--muted:#6B7280;--soft:#9CA3AF;
+  --rule:rgba(17,24,39,.12);--rule-solid:#E5E7EB;--accent:#1A3A6B;--accent-tint:rgba(26,58,107,.08);--on-accent:#FFFFFF}
+body{word-break:keep-all;overflow-wrap:break-word;font-family:var(--font-sans);background:var(--paper);color:var(--ink);line-height:1.6;padding:2.5rem 1rem 3rem}
+.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:1.75rem}
+header{display:flex;flex-direction:column;gap:.75rem}
+.eyebrow{font-size:.75rem;letter-spacing:.14em;color:var(--muted)}
+h1{font-family:var(--font-serif);font-weight:500;font-size:clamp(1.4rem,2.2vw + 1rem,2.1rem);line-height:1.35;letter-spacing:-.02em;text-wrap:balance}
+.lead{font-family:var(--font-serif);color:var(--muted);border-left:2px solid var(--rule-solid);padding-left:1rem;max-width:34em}
+.switch{display:flex;align-items:center;gap:1rem;padding:1rem 1.1rem;border:1px solid var(--rule-solid);border-radius:8px;background:var(--paper-2);width:100%;text-align:left;font:inherit;color:var(--ink);cursor:pointer}
+.switch:hover{border-color:var(--accent)}
+.switch:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.switch .lbl{flex:1;font-weight:600;font-size:1.02rem;line-height:1.5}
+.track{position:relative;flex-shrink:0;width:52px;height:30px;border-radius:15px;background:var(--rule-solid);border:1px solid var(--soft);transition:background .15s}
+.track::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:var(--paper);border:1px solid var(--soft);transition:transform .15s}
+.switch[aria-checked="true"] .track{background:var(--accent);border-color:var(--accent)}
+.switch[aria-checked="true"] .track::after{transform:translateX(22px);border-color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.track,.track::after{transition:none}}
+.state{border:1px solid var(--rule-solid);border-radius:8px;padding:1.4rem 1.3rem;background:var(--paper-2);display:flex;flex-direction:column;gap:.9rem}
+.state[data-on="true"]{border-color:var(--accent);background:var(--accent-tint)}
+.state[hidden]{display:none}
+.tag{font-size:.75rem;letter-spacing:.12em;color:var(--muted)}
+.state[data-on="true"] .tag{color:var(--accent)}
+.big{font-family:var(--font-serif);font-size:1.2rem;line-height:1.55;text-wrap:balance}
+.note{font-size:.93rem;color:var(--muted);line-height:1.7}
+.pill{display:inline-block;align-self:flex-start;font-size:.85rem;font-weight:600;padding:.3rem .75rem;border:1px solid var(--accent);border-radius:999px;color:var(--accent);background:var(--paper)}
+.close{border-top:1px solid var(--rule-solid);padding-top:1.25rem;font-family:var(--font-serif);font-size:1.05rem}
+footer{font-size:.78rem;color:var(--muted);display:flex;flex-direction:column;gap:.35rem;border-top:1px solid var(--rule);padding-top:1rem}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;color:var(--soft);font-size:.75rem}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">계약 · 회사 도장의 힘</p>
+    <h1>회사 도장이 찍힌 내 계약서, ‘담당자가 멋대로 찍었다’⁠는 말로 무효가 되지 않는다</h1>
+    <p class="lead">민사소송법은 도장이 찍힌 문서를 진정한 것으로 추정합니다.</p>
+  </header>
+
+  <button type="button" class="switch" id="sw" role="switch" aria-checked="false" aria-controls="off on">
+    <span class="lbl">회사가 ‘대표가 아니라 과장이 찍었다’⁠는 사실을 밝혀내면</span>
+    <span class="track" aria-hidden="true"></span>
+  </button>
+
+  <section class="state" id="off" data-on="false" aria-live="polite">
+    <span class="tag">회사가 이 추정을 뒤집으려면</span>
+    <p class="big">“몰래 찍었다”⁠고 주장하는 것으로는 부족합니다.</p>
+    <p class="note">법원이 의심을 품을 만한 구체적인 사정을 증거로 보여 주어야 합니다.</p>
+    <p class="note">법원은 특별한 반대 증거가 없는 한 계약서에 적힌 내용대로 약속이 있었다고 봅니다.</p>
+  </section>
+
+  <section class="state" id="on" data-on="true" hidden aria-live="polite">
+    <span class="tag">상황이 달라집니다</span>
+    <p class="big">그 과장에게 계약을 맺을 권한이 있었다는 점을 증명해야 하지요.</p>
+    <p class="note">그렇더라도 길은 남아 있습니다.</p>
+    <span class="pill">권한을 넘은 표현대리</span>
+    <p class="note">민법은 직원이 자기 권한을 넘어 계약했더라도, 상대방이 그 권한이 있다고 믿을 만한 정당한 이유가 있었다면 회사가 책임지도록 합니다.</p>
+    <p class="note">그 과장이 평소 외주 계약을 담당해 왔는지, 회사 메일로 연락했는지 같은 계약 당시의 사정이 그래서 중요합니다.</p>
+    <p class="note">나중에 회사가 “사실 그 과장은 권한이 없었다”⁠고 알려 온 사정은 그 판단에 끼어들지 않습니다.</p>
+  </section>
+
+  <p class="close">분쟁은 기억이 아니라 자료로 판가름 납니다.</p>
+
+  <footer>
+    <span>금액과 자료를 정리한 뒤 전문가 상담을 받아 보십시오.</span>
+    <div class="row"><span>원문: 회사 도장이 찍힌 내 계약서, ‘담당자가 멋대로 찍었다’⁠는 말로 무효가 되지 않는다</span><span>조우성 변호사</span></div>
+  </footer>
+</main>
+<script>
+(function(){
+  var sw=document.getElementById('sw'),off=document.getElementById('off'),on=document.getElementById('on');
+  function set(v){
+    sw.setAttribute('aria-checked',v?'true':'false');
+    on.hidden=!v;off.hidden=v;
+  }
+  sw.addEventListener('click',function(){set(sw.getAttribute('aria-checked')!=='true');});
+})();
+</script>
+</body>
+</html>
