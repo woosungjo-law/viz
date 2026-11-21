@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ko" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="경계인의 정의 — 두 세계를 함께 보고 번역하는 시야">
+  <meta name="robots" content="noindex, nofollow">
+  <title>경계인의 정의 — 두 세계를 함께 보는 자리</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f9fc;
+      --surface: #ffffff;
+      --ink: #18263d;
+      --muted: #53647a;
+      --line: #cad5e3;
+      --left: #dceaff;
+      --right: #e3f2eb;
+      --accent: #254f9d;
+      --focus: #a34619;
+      --shadow: 0 18px 54px rgba(37, 60, 92, .09);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #101722;
+        --surface: #182333;
+        --ink: #edf3fc;
+        --muted: #b0bfd2;
+        --line: #35465c;
+        --left: #253d60;
+        --right: #254438;
+        --accent: #a9c8ff;
+        --focus: #ffb07e;
+        --shadow: 0 18px 54px rgba(0, 0, 0, .22);
+      }
+    }
+    :root[data-theme="light"] {
+      color-scheme: light;
+      --paper: #f7f9fc; --surface: #fff; --ink: #18263d; --muted: #53647a;
+      --line: #cad5e3; --left: #dceaff; --right: #e3f2eb; --accent: #254f9d;
+      --focus: #a34619; --shadow: 0 18px 54px rgba(37, 60, 92, .09);
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --paper: #101722; --surface: #182333; --ink: #edf3fc; --muted: #b0bfd2;
+      --line: #35465c; --left: #253d60; --right: #254438; --accent: #a9c8ff;
+      --focus: #ffb07e; --shadow: 0 18px 54px rgba(0, 0, 0, .22);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: "Segoe UI", "Yu Gothic UI", Meiryo, sans-serif;
+      word-break: keep-all; line-height: 1.65;
+    }
+    button { font: inherit; }
+    .page { width: min(100% - 36px, 920px); margin: 0 auto; padding: 22px 0 42px; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .eyebrow { margin: 0; color: var(--muted); font-size: .83rem; letter-spacing: .09em; }
+    .theme-toggle, .type-button {
+      border: 1px solid var(--line); color: var(--ink); background: var(--surface);
+      cursor: pointer; transition: background-color .18s ease, border-color .18s ease;
+    }
+    .theme-toggle { border-radius: 999px; padding: 8px 13px; font-size: .88rem; }
+    .theme-toggle:hover, .type-button:hover { border-color: var(--accent); }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    header { padding: clamp(26px, 6vw, 54px) 0 30px; max-width: 720px; }
+    h1 { max-width: 680px; margin: 0 0 12px; font-size: clamp(2rem, 5.8vw, 4.1rem); line-height: 1.12; letter-spacing: -.045em; text-wrap: balance; }
+    .thesis { max-width: 640px; margin: 0; color: var(--muted); font-size: clamp(1.03rem, 2vw, 1.2rem); }
+    .draft-badge { display: inline-flex; margin: 14px 0 0; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: .82rem; }
+    .diagram { overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow); }
+    .worlds { display: grid; grid-template-columns: 1fr minmax(170px, .78fr) 1fr; min-height: 235px; }
+    .world { display: grid; align-content: center; justify-items: center; text-align: center; padding: 26px; }
+    .world:first-child { background: var(--left); }
+    .world:last-child { background: var(--right); }
+    .world-name { margin: 0 0 7px; font-size: .82rem; color: var(--muted); letter-spacing: .07em; }
+    .world-copy { max-width: 250px; margin: 0; font-size: clamp(1.05rem, 2.2vw, 1.34rem); font-weight: 650; line-height: 1.45; }
+    .seam { display: grid; align-content: center; justify-items: center; gap: 10px; padding: 22px 12px; text-align: center; }
+    .seam-label { margin: 0; color: var(--accent); font-size: .84rem; letter-spacing: .08em; }
+    .bridge { width: 100%; display: flex; align-items: center; gap: 8px; color: var(--accent); }
+    .bridge::before, .bridge::after { content: ""; height: 1px; background: currentColor; flex: 1; }
+    .bridge-mark { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--accent); border-radius: 50%; font-size: 1.2rem; }
+    .seam-copy { max-width: 190px; margin: 0; font-weight: 700; line-height: 1.45; }
+    .selector { display: flex; flex-wrap: wrap; gap: 9px; padding: 18px 20px 0; }
+    .type-button { border-radius: 999px; padding: 8px 13px; font-size: .9rem; }
+    .type-button[aria-pressed="true"] { border-color: var(--accent); background: var(--accent); color: var(--surface); }
+    .detail { min-height: 100px; padding: 16px 22px 22px; }
+    .detail p { max-width: 720px; margin: 0; font-size: clamp(1.05rem, 2.2vw, 1.3rem); }
+    .detail-label { display: block; margin-bottom: 5px; color: var(--muted); font-size: .8rem; letter-spacing: .06em; }
+    .closing { max-width: 720px; margin: 34px auto 0; padding: 0 10px; text-align: center; }
+    .closing p { margin: 0; font-family: Georgia, "Batang", serif; font-size: clamp(1.25rem, 3.2vw, 2rem); line-height: 1.55; text-wrap: balance; }
+    footer { margin-top: 36px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+    @media (max-width: 640px) {
+      .page { width: min(100% - 24px, 920px); padding-top: 14px; }
+      .worlds { grid-template-columns: 1fr; min-height: 0; }
+      .world { min-height: 130px; padding: 22px 18px; }
+      .seam { min-height: 145px; padding: 14px 18px; }
+      .bridge { width: min(68%, 280px); }
+      .detail { padding: 14px 18px 20px; }
+      .selector { padding-left: 16px; padding-right: 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="topline">
+      <p class="eyebrow">교양충전 · 288</p>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="화면 테마 전환">화면 테마 전환</button>
+    </div>
+    <header>
+      <h1>경계인의 정의</h1>
+      <p class="thesis">경계는 비는 곳이 아니라, 두 세계를 함께 보는 자리다.</p>
+      <p class="draft-badge">원문 상태 · 초안</p>
+    </header>
+    <section class="diagram" aria-label="두 세계 사이에서 언어를 번역하는 경계인">
+      <div class="worlds">
+        <div class="world">
+          <p class="world-name">첫 번째 세계</p>
+          <p class="world-copy" id="leftWorld">한 세계의 언어</p>
+        </div>
+        <div class="seam">
+          <p class="seam-label">경계인의 자리</p>
+          <div class="bridge" aria-hidden="true"><span class="bridge-mark">↔</span></div>
+          <p class="seam-copy">두 세계를 함께 보는 자리</p>
+        </div>
+        <div class="world">
+          <p class="world-name">두 번째 세계</p>
+          <p class="world-copy" id="rightWorld">또 다른 세계의 언어</p>
+        </div>
+      </div>
+      <div class="selector" role="group" aria-label="경계인의 유형 선택">
+        <button class="type-button" type="button" data-kind="culture" aria-pressed="true">문화적 경계인</button>
+        <button class="type-button" type="button" data-kind="industry" aria-pressed="false">업계 간 경계인</button>
+        <button class="type-button" type="button" data-kind="role" aria-pressed="false">역할의 경계인</button>
+      </div>
+      <div class="detail" aria-live="polite" aria-atomic="true">
+        <span class="detail-label" id="detailLabel">문화적 경계인</span>
+        <p id="detailText">문화 사이를 오간 사람은 두 문화의 언어를 안다.</p>
+      </div>
+    </section>
+    <section class="closing" aria-label="경계인의 시야">
+      <p>한 세계의 언어만 아는 사람은 한 세계를 보고, 두 세계의 언어를 아는 사람은 그 사이를 본다.</p>
+    </section>
+    <footer>원문: 경계인의 정의 · 웹반영수정본</footer>
+  </main>
+  <script>
+    (() => {
+      const variants = {
+        culture: {
+          label: "문화적 경계인",
+          left: "한 문화의 언어",
+          right: "또 다른 문화의 언어",
+          detail: "문화 사이를 오간 사람은 두 문화의 언어를 안다."
+        },
+        industry: {
+          label: "업계 간 경계인",
+          left: "법과 기술",
+          right: "의학과 경영",
+          detail: "법과 기술, 의학과 경영 사이에 선 사람은 어느 한쪽이 듣지 못하는 소리를 듣는다."
+        },
+        role: {
+          label: "역할의 경계인",
+          left: "리더이면서 구성원",
+          right: "가르치면서 배우는 사람",
+          detail: "이중의 자리가 주는 긴장은 오히려 통찰의 씨앗이 된다."
+        }
+      };
+      const root = document.documentElement;
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
+      });
+      document.querySelectorAll(".type-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const item = variants[button.dataset.kind];
+          document.querySelectorAll(".type-button").forEach((b) => b.setAttribute("aria-pressed", String(b === button)));
+          document.getElementById("leftWorld").textContent = item.left;
+          document.getElementById("rightWorld").textContent = item.right;
+          document.getElementById("detailLabel").textContent = item.label;
+          document.getElementById("detailText").textContent = item.detail;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
