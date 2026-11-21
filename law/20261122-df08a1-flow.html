@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="공정위 조사관 도착 뒤 원문이 제안하는 현장 대응 순서와 사전 준비">
+  <title>조사 당일 현장 대응 흐름</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fff;
+      --surface: #f8fafc;
+      --ink: #111827;
+      --muted: #596579;
+      --line: #cbd5e1;
+      --line-strong: #94a3b8;
+      --navy: #1a3a6b;
+      --navy-tint: #edf3fb;
+      --focus: #2563eb;
+      --warm: #f7f3eb;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --paper: #101722;
+        --surface: #172232;
+        --ink: #edf3fa;
+        --muted: #b0bdcc;
+        --line: #3a4a5f;
+        --line-strong: #657891;
+        --navy: #aac8ff;
+        --navy-tint: #1d2c42;
+        --focus: #9bbdff;
+        --warm: #29271f;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 "Pretendard", "Malgun Gothic", "맑은 고딕", sans-serif;
+      word-break: keep-all;
+    }
+    :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
+    .wrap { width: min(100% - 40px, 1080px); margin: 0 auto; padding: 34px 0 48px; }
+    .eyebrow { margin: 0 0 13px; color: var(--muted); font-size: .88rem; letter-spacing: .04em; }
+    h1 { max-width: 800px; margin: 0; font-size: clamp(2rem, 5vw, 3.55rem); line-height: 1.12; letter-spacing: -.045em; text-wrap: balance; }
+    .dek { max-width: 690px; margin: 17px 0 0; color: var(--muted); font-size: 1.08rem; }
+    .source-label { display: inline-flex; gap: 8px; align-items: center; margin-top: 19px; padding: 7px 10px; border-left: 3px solid var(--navy); background: var(--navy-tint); color: var(--ink); font-size: .9rem; font-weight: 650; }
+    .source-label svg { width: 18px; height: 18px; flex: 0 0 auto; color: var(--navy); }
+    .section-title { margin: 38px 0 18px; font-size: 1.1rem; letter-spacing: -.02em; }
+    .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin: 0; padding: 0; list-style: none; }
+    .step { position: relative; min-width: 0; }
+    .step:not(:last-child)::after { content: ""; position: absolute; z-index: 2; top: 43px; right: -22px; width: 14px; height: 14px; border-top: 2px solid var(--navy); border-right: 2px solid var(--navy); transform: rotate(45deg); background: var(--paper); }
+    .step::before { content: ""; position: absolute; top: 49px; left: calc(50% + 47px); right: calc(-50% + 47px); border-top: 1px solid var(--line-strong); }
+    .step:last-child::before { display: none; }
+    .step-body { position: relative; z-index: 1; min-height: 215px; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0 12px 18px; text-align: center; }
+    .icon { display: grid; width: 98px; height: 98px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: var(--paper); color: var(--navy); }
+    .icon svg { width: 54px; height: 54px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .step-num { position: absolute; top: -4px; left: calc(50% + 28px); z-index: 3; display: grid; width: 27px; height: 27px; place-items: center; border: 1px solid var(--line-strong); border-radius: 50%; background: var(--paper); color: var(--muted); font-size: .76rem; font-variant-numeric: tabular-nums; }
+    .step h3, .outcome h3, .prep h3 { margin: 0; font-size: 1.03rem; line-height: 1.38; }
+    .step p, .outcome p, .prep p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .quote { max-width: 245px; margin-top: 2px !important; padding: 9px 11px; border-left: 2px solid var(--navy); background: var(--navy-tint); color: var(--ink) !important; text-align: left; }
+    .decision { position: relative; width: min(100%, 550px); margin: 9px auto 0; padding: 17px 20px 18px; border: 1px solid var(--navy); background: var(--navy-tint); text-align: center; }
+    .decision::before { content: ""; position: absolute; bottom: 100%; left: 50%; height: 10px; border-left: 1px solid var(--line-strong); }
+    .decision-kicker { margin: 0 0 3px; color: var(--muted); font-size: .82rem; }
+    .decision h2 { margin: 0; font-size: 1.15rem; }
+    .outcomes { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 31px auto 0; max-width: 850px; }
+    .outcomes::before { content: ""; position: absolute; left: 25%; right: 25%; top: -16px; border-top: 1px solid var(--line-strong); }
+    .outcome { position: relative; min-height: 154px; padding: 19px 20px 18px 76px; border-top: 1px solid var(--line-strong); background: var(--surface); }
+    .outcome::before { content: ""; position: absolute; left: 50%; bottom: 100%; height: 16px; border-left: 1px solid var(--line-strong); }
+    .outcome-icon { position: absolute; top: 20px; left: 19px; display: grid; width: 42px; height: 42px; place-items: center; color: var(--navy); }
+    .outcome-icon svg { width: 38px; height: 38px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .branch { display: inline-block; margin-bottom: 7px; color: var(--navy); font-size: .82rem; font-weight: 750; letter-spacing: .04em; }
+    .outcome p + p { margin-top: 5px; }
+    .prep-section { margin-top: 43px; padding: 22px 24px 24px; background: var(--warm); }
+    .prep-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+    .prep-heading svg { width: 25px; height: 25px; color: var(--navy); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .prep-heading h2 { margin: 0; font-size: 1.08rem; }
+    .prep-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .prep { position: relative; min-height: 108px; padding: 1px 0 0 55px; }
+    .prep-icon { position: absolute; top: 0; left: 0; display: grid; width: 40px; height: 40px; place-items: center; color: var(--navy); }
+    .prep-icon svg { width: 37px; height: 37px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .prep h3 { margin-bottom: 5px; }
+    footer { margin-top: 26px; padding-top: 13px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 560px); padding-top: 22px; }
+      .steps { grid-template-columns: 1fr; gap: 0; }
+      .step { min-height: 140px; }
+      .step-body { display: grid; grid-template-columns: 76px 1fr; grid-template-rows: auto auto; justify-items: start; align-content: start; column-gap: 16px; min-height: 140px; padding: 10px 0 22px; text-align: left; }
+      .step::before { top: 80px; bottom: -2px; left: 37px; right: auto; border-top: 0; border-left: 1px solid var(--line-strong); }
+      .step:last-child::before { display: block; }
+      .step:not(:last-child)::after { top: auto; right: auto; bottom: -1px; left: 31px; width: 12px; height: 12px; transform: rotate(135deg); }
+      .icon { grid-row: 1 / span 2; width: 72px; height: 72px; }
+      .icon svg { width: 43px; height: 43px; }
+      .step-num { top: 2px; left: 55px; }
+      .step h3 { align-self: end; }
+      .step p { align-self: start; }
+      .quote { max-width: 100%; margin-top: 5px !important; }
+      .decision { margin-top: 8px; }
+      .decision::before { height: 8px; }
+      .outcomes { grid-template-columns: 1fr; gap: 18px; margin-top: 27px; }
+      .outcomes::before { left: 50%; right: auto; top: -14px; height: 32px; border-top: 0; border-left: 1px solid var(--line-strong); }
+      .outcome { min-height: 132px; padding: 17px 14px 16px 68px; }
+      .outcome::before { display: none; }
+      .prep-section { margin-top: 34px; padding: 19px 17px 10px; }
+      .prep-grid { grid-template-columns: 1fr; gap: 9px; }
+      .prep { min-height: 82px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">공정위 조사 대응 · 현장 절차</p>
+      <h1>조사관 도착,<br>현장 대응의 순서</h1>
+      <p class="dek">원문이 제안하는 조사 당일 대응 흐름과 사전 준비</p>
+      <div class="source-label">
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.2c0 4.6 3.1 8.1 7.5 9.8 4.4-1.7 7.5-5.2 7.5-9.8V6L12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m8.5 12 2.2 2.2 4.8-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        원문 제안 절차 · 사례·금액·법적 평가는 제외
+      </div>
+    </header>
+
+    <section aria-labelledby="response-title">
+      <h2 class="section-title" id="response-title">조사관 도착 후, 순서대로 대응합니다</h2>
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">01</span>
+          <div class="step-body">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 40V9h25v31M8 40h33M33 16h7v24"/><circle cx="25" cy="25" r="4"/><path d="M19 36c.8-4 2.7-6 6-6s5.2 2 6 6M15 15h7M15 20h5"/></svg></span>
+            <h3>사전 통보 없이 조사관 도착</h3>
+            <p>현장 대응 시작</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">02</span>
+          <div class="step-body">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 10h32v23H23l-9 7v-7H8z"/><path d="M15 18h18M15 24h12"/></svg></span>
+            <h3>협조 의사와 함께 진술 전 협의 요청</h3>
+            <p class="quote">“조사에 협조하겠다, 다만 정확한 답변을 위해 법무팀과 먼저 협의한 뒤 진술하겠다, 영장 내용을 확인하고 사본을 요청할 시간이 필요하다.”</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">03</span>
+          <div class="step-body">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 18h25v19H7zM12 18v-5h15v5M11 24h17M11 29h11"/><path d="M32 12h9v24h-9M35 16h3M35 20h3M35 31h3"/><path d="M30 22h4"/></svg></span>
+            <h3>회의실 안내 · 법무팀 연락</h3>
+            <p>조사관을 회의실로 안내하고 법무팀에 연락</p>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">04</span>
+          <div class="step-body">
+            <span class="icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M12 6h18l7 7v28H12zM30 6v8h7M18 21h12M18 26h9"/><circle cx="32" cy="33" r="6"/><path d="m36.5 37.5 5 5"/></svg></span>
+            <h3>영장 내용 확인 · 사본 요청</h3>
+            <p>압수 대상과 혐의 사실 확인</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="decision">
+        <p class="decision-kicker">상황 분기</p>
+        <h2>이미 즉흥 진술이 이루어졌는가?</h2>
+      </div>
+      <div class="outcomes" aria-label="상황별 후속 대응">
+        <article class="outcome">
+          <span class="outcome-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M7 8h26v24H7zM12 14h16M12 20h10"/><circle cx="25" cy="27" r="5"/><path d="m29 31 5 5"/></svg></span>
+          <span class="branch">아니오 · 아직 진술 전</span>
+          <h3>법무팀 또는 외부 변호사 자문 후 진술</h3>
+        </article>
+        <article class="outcome">
+          <span class="outcome-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M6 10h28v21H6zM7 12l13 10 13-10M12 6h16"/><path d="M12 27h7"/></svg></span>
+          <span class="branch">예 · 이미 즉흥 진술</span>
+          <h3>그날 오후 안에 서면 통지</h3>
+          <p>이메일·회의록 등 객관적 증거 제출</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="prep-section" aria-labelledby="prep-title">
+      <div class="prep-heading">
+        <svg aria-hidden="true" viewBox="0 0 28 28"><path d="M14 3 5 7v6.5c0 5.4 3.7 9.5 9 11.5 5.3-2 9-6.1 9-11.5V7l-9-4Z"/><path d="m10 14 2.6 2.6L18.5 11"/></svg>
+        <h2 id="prep-title">사전 준비 항목</h2>
+      </div>
+      <div class="prep-grid">
+        <article class="prep">
+          <span class="prep-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 7v8M10 11l5 6M30 11l-5 6M8 20h8M24 20h8M11 29l6-5M29 29l-6-5"/><circle cx="20" cy="20" r="4"/><circle cx="20" cy="6" r="2"/><circle cx="8" cy="10" r="2"/><circle cx="32" cy="10" r="2"/><circle cx="7" cy="21" r="2"/><circle cx="33" cy="21" r="2"/><circle cx="10" cy="30" r="2"/><circle cx="30" cy="30" r="2"/></svg></span>
+          <h3>전사 비상연락망 구축</h3>
+          <p>조사관 도착 시 행동 지침을 배포</p>
+        </article>
+        <article class="prep">
+          <span class="prep-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M11 6h18v28H11zM15 12h10M15 18h10M15 24h7"/><path d="m23 29 3 3 6-7"/></svg></span>
+          <h3>한 페이지 행동 지침 비치</h3>
+          <p>전 직원 책상에 비치</p>
+        </article>
+        <article class="prep">
+          <span class="prep-icon" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M32 14a13 13 0 0 0-22-4L7 13M8 8v5h5M8 26a13 13 0 0 0 22 4l3-3M32 32v-5h-5"/><path d="m15 20 3 3 7-8"/></svg></span>
+          <h3>분기별 조사 당일 모의훈련</h3>
+          <p>조사관 도착 시 행동을 반복 연습</p>
+        </article>
+      </div>
+    </section>
+    <footer>원문: ep04_조사 당일 대응 · 조우성 변호사</footer>
+  </main>
+</body>
+</html>
